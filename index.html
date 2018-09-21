@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+</head>
+
+<body>
+
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">P1</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" id="P1">
+                </div>
+                <p class="help" id="P1t"></p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label class="label">P2</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" id="P2">
+                </div>
+                <p class="help" id="P2t"></p>
+            </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">P3</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" id="P3">
+                </div>
+                <p class="help" id="P3t"></p>
+            </div>
+        </div>
+    </div>
+
+    <a id="click"><button class="button" onclick="check()" style="size:30px">vbvb</button></a>
+</body>
+
+<script>
+
+    function check() {
+        var pp1 = document.getElementById("P1").value;
+        var pp2 = document.getElementById("P2").value;
+        var pp3 = document.getElementById("P3").value.includes(".com", 0);
+        var ch = 0;
+    
+
+        if (pp1 == pp2 && pp1 != "" && pp2 != "") {
+            document.getElementById("P1t").innerText = "OK";
+            document.getElementById("P2t").innerText = "OK";
+            document.getElementById("P1").classList.remove("is-danger");
+            document.getElementById("P2").classList.remove("is-danger");
+            document.getElementById("P1t").setAttribute("style", "color:green")
+            document.getElementById("P2t").setAttribute("style", "color:green")
+            ch++;
+        } else {
+            document.getElementById("P1t").innerText = "No";
+            document.getElementById("P2t").innerText = "No";
+            document.getElementById("P1").classList.add("is-danger");
+            document.getElementById("P2").classList.add("is-danger");
+            document.getElementById("P1t").setAttribute("style", "color:red")
+            document.getElementById("P2t").setAttribute("style", "color:red")
+        }
+
+        if (pp3 && pp3 != "") {
+            document.getElementById("P3t").innerText = "OK";
+            document.getElementById("P3").classList.remove("is-danger");
+            document.getElementById("P3t").setAttribute("style", "color:green")
+            ch++;
+
+        } else {
+            document.getElementById("P3t").innerText = "No";
+            document.getElementById("P3").classList.add("is-danger");
+            document.getElementById("P3t").setAttribute("style", "color:red")
+
+        }
+    console.log(ch);
+        if(ch == 2){
+            
+            document.getElementById("click").setAttribute("href","https://www.facebook.com/");
+        }
+    }
+
+
+</script>
+
+</html>
